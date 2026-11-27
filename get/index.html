@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carpetman – Rug Cleaning ASMR</title>
+<meta name="description" content="Satisfying rug cleaning ASMR game. Free on the App Store and Google Play.">
+<meta property="og:title" content="Carpetman – Rug Cleaning ASMR">
+<meta property="og:description" content="Vacuum, foam, scrub and rinse filthy rugs until they're spotless. Free on iOS & Android.">
+<meta property="og:image" content="https://mayinovasyon.github.io/carpetman-legal/get/icon.jpg">
+<meta property="og:type" content="website">
+<script>
+// Telefona göre doğru mağazaya yönlendir. ?s=tiktok gibi kaynak etiketi mağaza kampanya ölçümüne geçer.
+(function () {
+  var APPLE = 'https://apps.apple.com/app/id6839227861';
+  var PLAY = 'https://play.google.com/store/apps/details?id=com.mayinovasyon.carpetman';
+  var s = (new URLSearchParams(location.search).get('s') || 'direct').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 24) || 'direct';
+  var ua = navigator.userAgent || '';
+  var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+  var android = /Android/i.test(ua);
+  window.CM_LINKS = {
+    apple: APPLE + '?ct=' + encodeURIComponent(s) + '&mt=8',
+    play: PLAY + '&referrer=' + encodeURIComponent('utm_source=' + s + '&utm_medium=social&utm_campaign=smartlink')
+  };
+  if (ios) location.replace(window.CM_LINKS.apple);
+  else if (android) location.replace(window.CM_LINKS.play);
+})();
+</script>
+<style>
+  :root { --paper:#F6EAD3; --card:#FFF9EF; --ink:#3B2A20; --soft:#7A6656; --accent:#C8553D; --line:#DCC6A2; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--paper); color:var(--ink); font:17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width:460px; width:100%; padding:32px 20px; text-align:center; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:24px; padding:32px 24px; }
+  img.icon { width:132px; height:132px; border-radius:30px; box-shadow:0 6px 18px rgba(59,42,32,.25); }
+  h1 { margin:18px 0 2px; color:var(--accent); font-size:32px; letter-spacing:.5px; }
+  p.sub { margin:0 0 22px; color:var(--soft); }
+  .badges { display:flex; flex-direction:column; align-items:center; gap:12px; }
+  .badges img { height:56px; width:auto; display:block; }
+  .meta { margin-top:18px; font-size:14px; color:var(--soft); }
+  .meta a { color:var(--soft); }
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <img class="icon" src="icon.jpg" alt="Carpetman">
+    <h1>CARPETMAN</h1>
+    <p class="sub" id="sub">Rug Cleaning ASMR · Free</p>
+    <div class="badges">
+      <a id="apple" href="https://apps.apple.com/app/id6839227861"><img id="appleImg" src="appstore_en.png" alt="Download on the App Store"></a>
+      <a id="play" href="https://play.google.com/store/apps/details?id=com.mayinovasyon.carpetman"><img id="playImg" src="googleplay_en.png" alt="Get it on Google Play"></a>
+    </div>
+    <p class="meta">MAY İnovasyon · <a href="../privacy/">Privacy</a> · <a href="../support/">Support</a></p>
+  </div>
+</main>
+<script>
+  // Bilgisayardan açılırsa: iki rozet, kaynak etiketli linklerle; Türkçe cihazda Türkçe rozet.
+  if (window.CM_LINKS) { document.getElementById('apple').href = CM_LINKS.apple; document.getElementById('play').href = CM_LINKS.play; }
+  if (/^tr/i.test(navigator.language || '')) {
+    document.documentElement.lang = 'tr';
+    document.getElementById('sub').textContent = 'Halı Yıkama ASMR · Ücretsiz';
+    document.getElementById('appleImg').src = 'appstore_tr.png'; document.getElementById('appleImg').alt = "App Store'dan indirin";
+    document.getElementById('playImg').src = 'googleplay_tr.png'; document.getElementById('playImg').alt = "Google Play'den indirin";
+  }
+</script>
+</body>
+</html>
